@@ -122,4 +122,21 @@ sudo reboot
 ```
    sudo systemctl status libvirtd ![]()
 ```   
+![getent](https://github.com/kondurunikhil/virtualisation_Ass_2/blob/main/images/systemctl.png)
+
+16) As everything is functioning properly, the output returns an active (running) status.
+Use virt-manager to create  inner VM along with the GUI :
+```
+cd ~
+wget https://releases.ubuntu.com/jammy/ubuntu-22.04.1-desktop-amd64.iso
+sudo mv ~/ubuntu-22.04.1-desktop-amd64.iso /var/lib/libvirt/images/
+sudo virt-manager
+```   
+![getent](https://github.com/kondurunikhil/virtualisation_Ass_2/blob/main/images/virt-manager.png)
+17) choose create a new virtual machine  and select the os downloaded ubuntu 22.04.1 
+![innervm](https://github.com/kondurunikhil/virtualisation_Ass_2/blob/main/images/inner-vm.png)
+
+18) we can perform our A2 exit handling testing on the newly installed inner-VM:
+![output](https://github.com/kondurunikhil/virtualisation_Ass_2/blob/main/images/out_put.png)
+
 
