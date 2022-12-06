@@ -57,6 +57,7 @@ sudo apt-get install flex
 cat /proc/cpuinfo
 ```
 8. Installed necessary Tools <br />
+
 ```
 sudo apt-get install build-essential
 sudo apt-get install kernel-package
@@ -65,6 +66,8 @@ sudo apt-get install flex
 sudo apt-get install bison
 sudo apt-get install libssl-dev
 sudo apt-get install libelf-dev
+```
+
 to confirm that all the configurations were as needed.  
 
 9. prepared the linux using make prepare command: <br />
@@ -83,11 +86,14 @@ make -j 8
 ```
 sudo make -j 8 INSTALL_MOD_STRIP=1 modules_install
 ```
-13. Installed the linux kernal 
+13. Installed the linux kernel 
+
 ```
 sudo make -j 8 install
 ```
+
 14. Based on the requirements, we modified ~/linux/arch/x86/kvm/vmx/vmx.c  : <br />
+
 ```
   extern atomic_t total_exits_counter;
     extern atomic64_t total_cup_cycles_counter;
@@ -103,7 +109,9 @@ sudo make -j 8 install
         arch_atomic64_add((end_time_counter - start_time_counter), &total_cup_cycles_counter);
     }
 ```
+
 15. Based on the requirements, we modified ~/linux/arch/x86/kvm/cpuid.c :
+
 ```
 atomic_t total_exits_counter = ATOMIC_INIT(0);
     EXPORT_SYMBOL(total_exits_counter);
@@ -132,7 +140,9 @@ atomic_t total_exits_counter = ATOMIC_INIT(0);
                 //printk(KERN_INFO "### Total CPU Exit Cycle Time(lo) in ECX = %u", ecx);
                 break;
 ```
+
 16. Build and install the modules again, then install the kernel  <br />
+
 ```
      make -j 8 modules
      sudo make -j 8 INSTALL_MOD_STRIP=1 modules_install
@@ -143,6 +153,8 @@ atomic_t total_exits_counter = ATOMIC_INIT(0);
 
 17. As there are no errors, we can create a inner VM inside our current VM,
 but first we need to install some extra tools for KVM 
+
+
 ```
 sudo apt-get install cpu-checker
 sudo apt update
@@ -150,7 +162,10 @@ sudo apt-get install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
 sudo kvm-ok
 sudo reboot
 ```
+
+
 18. Now we need to authorize a vm users for the inner VM, and verify our VM functionalities:
+
 ```
   uname -a
 ```
@@ -162,11 +177,14 @@ sudo reboot
   sudo getent group | grep libvirt 
 ```
 
+
 ![getent](https://github.com/kondurunikhil/virtualisation_Ass_2/blob/main/images/getent.png)
+
 
 ```
    sudo virsh list --all
 ```
+
 
 ![getent](https://github.com/kondurunikhil/virtualisation_Ass_2/blob/main/images/virshlist-all.png)
 
@@ -175,10 +193,12 @@ sudo reboot
    sudo systemctl status libvirtd 
 ``` 
 
+
 ![getent](https://github.com/kondurunikhil/virtualisation_Ass_2/blob/main/images/systemctl.png)
 
 19. As everything is functioning properly, the output returns an active (running) status.
 Use virt-manager to create  inner VM along with the GUI :
+
 ```
 cd ~
 wget https://releases.ubuntu.com/jammy/ubuntu-22.04.1-desktop-amd64.iso
