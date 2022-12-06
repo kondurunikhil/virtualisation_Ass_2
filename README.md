@@ -12,15 +12,7 @@ CMPE 283 Assignment 2
 ```
 cp /boot/config-5.15.0-1025-gcp ~/linux/.config
 ```
-3) Install necessary Tools <br />
-```
-sudo apt-get install build-essential
-sudo apt-get install kernel-package
-sudo apt-get install ccache 
-sudo apt-get install flex
-sudo apt-get install bison
-sudo apt-get install libssl-dev
-sudo apt-get install libelf-dev
+
 ```
 4) prepare the linux using make prepare command: <br />
 ```
