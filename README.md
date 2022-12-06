@@ -136,7 +136,7 @@ sudo virt-manager
 17) choose create a new virtual machine  and select the os downloaded ubuntu 22.04.1 
 ![innervm](https://github.com/kondurunikhil/virtualisation_Ass_2/blob/main/images/inner-vm.png)
 
-18) we can perform our Assignment 2 exit handling testing on the newly installed inner-VM:
+18)performed our Assignment 2 exit handling testing on the newly installed inner-VM:
 ![output](https://github.com/kondurunikhil/virtualisation_Ass_2/blob/main/images/out_put.png)
 
 
