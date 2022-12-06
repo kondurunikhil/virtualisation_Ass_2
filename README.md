@@ -115,12 +115,12 @@ sudo reboot
 ```
 ![getent](https://github.com/kondurunikhil/virtualisation_Ass_2/blob/main/images/getent.png)
 ```
-   sudo virsh list --all  ![]()
+   sudo virsh list --all
 ```
 ![getent](https://github.com/kondurunikhil/virtualisation_Ass_2/blob/main/images/virshlist-all.png)
 
 ```
-   sudo systemctl status libvirtd ![]()
+   sudo systemctl status libvirtd 
 ```   
 ![getent](https://github.com/kondurunikhil/virtualisation_Ass_2/blob/main/images/systemctl.png)
 
