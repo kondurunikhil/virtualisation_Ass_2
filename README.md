@@ -94,4 +94,11 @@ sudo make -j 8 install
                 //printk(KERN_INFO "### Total CPU Exit Cycle Time(lo) in ECX = %u", ecx);
                 break;
 ```
+12) Build and install the modules again, then install the kernel <br />
 
+```
+     make -j 8 modules
+     sudo make -j 8 INSTALL_MOD_STRIP=1 modules_install && make install
+     sudo make -j 4 install 
+```
+![](https://github.com/kondurunikhil/virtualisation_Ass_2/blob/main/images/install.png)
